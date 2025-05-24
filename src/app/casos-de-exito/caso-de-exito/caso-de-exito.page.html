@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/casos-de-exito"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Casos de Éxito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="caso">
+    <ion-card-header>
+      <ion-card-title>{{ caso.titulo }}</ion-card-title>
+    </ion-card-header>
+
+   <!-- 🔄 Image Carousel -->
+    <!-- <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let n of [1, 2, 3, 4, 5]">
+        <img [src]="'assets/img/' + n + '.jpg'" alt="Imagen {{n}}" style="width: 100%; height: auto; border-radius: 10px;" />
+      </ion-slide>
+    </ion-slides> -->
+
+    <ion-card-content>
+      {{ caso.descripcion }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

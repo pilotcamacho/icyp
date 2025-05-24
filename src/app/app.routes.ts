@@ -12,10 +12,18 @@ export const routes: Routes = [
   },
   {
     path: 'servicios',
-    loadComponent: () => import('./servicios/servicios.page').then( m => m.ServiciosPage)
+    loadComponent: () => import('./servicios/servicios.page').then(m => m.ServiciosPage)
   },
   {
     path: 'quienes-somos',
-    loadComponent: () => import('./quienes-somos/quienes-somos.page').then( m => m.QuienesSomosPage)
+    loadComponent: () => import('./quienes-somos/quienes-somos.page').then(m => m.QuienesSomosPage)
+  },
+  {
+    path: 'casos-de-exito',
+    loadComponent: () => import('./casos-de-exito/casos-de-exito.page').then(m => m.CasosDeExitoPage)
+  },
+  {
+    path: 'caso-de-exito/:id',
+    loadComponent: () => import('./casos-de-exito/caso-de-exito/caso-de-exito.page').then(m => m.CasoDeExitoPage)
   },
 ];
