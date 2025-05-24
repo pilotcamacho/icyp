@@ -1,0 +1,43 @@
+.quienes-page {
+  .profile-card {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 0.2rem 0;
+      color: #002366;
+    }
+
+    h4 {
+      font-size: 1rem;
+      color: #666;
+      margin: 0.2rem 0 0.5rem;
+    }
+
+    a {
+      font-size: 0.9rem;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 1rem;
+      text-align: justify;
+    }
+  }
+}

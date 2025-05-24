@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Servicios
+      <!--<ion-icon name="reload-outline" (click)="goRefreshPage()"></ion-icon>-->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding servicios-page" fullscreen>
+  <div class="header">
+    <h2>Nuestros Servicios</h2>
+    <p>Ofrecemos soluciones integrales en comunicación estratégica y relaciones públicas.</p>
+  </div>
+
+  <ion-list>
+    <ion-item lines="none" *ngFor="let servicio of servicios">
+      <ion-icon name="checkmark-circle-outline" slot="start" color="primary"></ion-icon>
+      <ion-label>{{ servicio }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

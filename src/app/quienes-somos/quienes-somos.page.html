@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Quiénes somos
+      <!--<ion-icon name="reload-outline" (click)="goRefreshPage()"></ion-icon>-->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding quienes-page" fullscreen>
+  <div class="profile-card" *ngFor="let person of personas">
+    <img [src]="person.foto" alt="Foto de {{ person.nombre }}" />
+    <h2>{{ person.nombre }}</h2>
+    <h4>{{ person.cargo }}</h4>
+    <a [href]="'mailto:' + person.email">{{ person.email }}</a>
+    <p>{{ person.cv }}</p>
+  </div>
+</ion-content>

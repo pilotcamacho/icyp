@@ -1,0 +1,27 @@
+.servicios-page {
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: #002366;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #333;
+    }
+  }
+
+  ion-item {
+    font-size: 1rem;
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+  }
+
+  ion-icon {
+    color: #002366;
+  }
+}

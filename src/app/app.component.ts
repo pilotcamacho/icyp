@@ -1,11 +1,37 @@
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import {
+  IonMenu, IonApp, IonHeader, IonToolbar, IonTitle,
+  IonContent, IonList, IonMenuToggle, IonIcon, IonItem, IonLabel,
+  IonFooter, IonRouterOutlet,
+  MenuController
+} from '@ionic/angular/standalone';
+
+import { addIcons } from "ionicons";
+import { scanOutline } from 'ionicons/icons';
+
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  imports: [IonApp, IonRouterOutlet],
+  standalone: true,
+  imports: [
+    RouterModule, CommonModule,
+    IonMenu, IonApp, IonHeader, IonToolbar, IonTitle,
+    IonContent, IonList, IonMenuToggle, IonIcon, IonItem, IonLabel, IonFooter,
+    IonRouterOutlet,
+
+  ],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+
+  ) {
+    addIcons({ scanOutline });
+  }
+
+  signOut() {
+    console.log("AppComponent::signOut")
+  }
 }
