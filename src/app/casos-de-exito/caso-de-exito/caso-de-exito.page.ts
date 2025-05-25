@@ -5,6 +5,8 @@ import {
   IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton,
   IonCard, IonCardHeader, IonCardTitle, IonCardContent,
 } from '@ionic/angular/standalone';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,10 +16,19 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,
     IonCard, IonCardHeader, IonCardTitle, IonCardContent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CasoDeExitoPage implements OnInit {
 
+  imageList = [
+    'assets/img/artcartagena/1.jpg',
+    'assets/img/artcartagena/2.jpg',
+    'assets/img/artcartagena/3.jpg',
+    'assets/img/artcartagena/4.jpg',
+    'assets/img/artcartagena/5.jpg',
+    'assets/img/artcartagena/6.jpg'
+  ];
 
   caso: any;
 

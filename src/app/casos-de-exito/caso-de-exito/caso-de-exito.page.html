@@ -13,12 +13,12 @@
       <ion-card-title>{{ caso.titulo }}</ion-card-title>
     </ion-card-header>
 
-   <!-- 🔄 Image Carousel -->
-    <!-- <ion-slides [options]="slideOpts">
-      <ion-slide *ngFor="let n of [1, 2, 3, 4, 5]">
-        <img [src]="'assets/img/' + n + '.jpg'" alt="Imagen {{n}}" style="width: 100%; height: auto; border-radius: 10px;" />
-      </ion-slide>
-    </ion-slides> -->
+    <swiper-container slides-per-view="1" space-between="10" autoplay-delay="2500" loop="true" navigation="true"
+      pagination="true" style="width: 100%; max-width: 400px; height: auto;">
+      <swiper-slide *ngFor="let img of imageList">
+        <img [src]="img" style="width: 100%; border-radius: 10px;" />
+      </swiper-slide>
+    </swiper-container>
 
     <ion-card-content>
       {{ caso.descripcion }}

@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
-  IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList,
+  IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton,
   IonGrid, IonRow, IonCol,
-  IonCard, IonCardHeader, IonCardTitle, IonCardContent,
-  IonBackButton
+  IonCard, IonCardHeader, IonCardTitle, IonCardContent
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 
@@ -14,10 +13,9 @@ import { Router } from '@angular/router';
   templateUrl: './casos-de-exito.page.html',
   styleUrls: ['./casos-de-exito.page.scss'],
   standalone: true,
-  imports: [IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton,
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton,
     IonGrid, IonRow, IonCol,
-    IonCard, IonCardHeader, IonCardTitle, IonCardContent,
-    IonBackButton
+    IonCard, IonCardHeader, IonCardTitle, IonCardContent
   ]
 })
 export class CasosDeExitoPage implements OnInit {
