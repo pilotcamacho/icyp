@@ -8,6 +8,7 @@ import {
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
+import { CasosDeExitoService } from 'src/app/services/casos-de-exito.service';
 
 @Component({
   selector: 'app-caso-de-exito',
@@ -21,51 +22,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CasoDeExitoPage implements OnInit {
 
-  imageList = [
-    'assets/img/artcartagena/1.jpg',
-    'assets/img/artcartagena/2.jpg',
-    'assets/img/artcartagena/3.jpg',
-    'assets/img/artcartagena/4.jpg',
-    'assets/img/artcartagena/5.jpg',
-    'assets/img/artcartagena/6.jpg'
-  ];
+  imageList: string[] = [];
 
   caso: any;
 
-
-  casosDeExito = [
-    {
-      id: 'artcartagena',
-      titulo: 'Artcartagena',
-      descripcion: 'Promoción cultural y artística en Cartagena con impacto internacional.'
-    },
-    {
-      id: 'economia-negocios',
-      titulo: 'Economía y Negocios',
-      descripcion: 'Transformación digital en sectores empresariales clave.'
-    },
-    {
-      id: 'infraestructura',
-      titulo: 'Infraestructura',
-      descripcion: 'Desarrollo de proyectos sostenibles con enfoque social.'
-    },
-    {
-      id: 'galeria-cano',
-      titulo: 'Galería Cano',
-      descripcion: 'Rescate y exposición de arte colonial colombiano.'
-    },
-    {
-      id: 'botero-china',
-      titulo: 'Botero en China',
-      descripcion: 'Exposición internacional del maestro Botero en Shanghái y Pekín.'
-    }
-  ];
+  casosDeExito: { id: string, titulo: string, descripcion: string, path: string, cnt: number }[] = []
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private casosDeExitoSrv: CasosDeExitoService
+  ) {
+    this.casosDeExito = this.casosDeExitoSrv.casosDeExito;
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.caso = this.casosDeExito.find(c => c.id === id);
+
+    if (this.caso) {
+      const basePath = `assets/img/${this.caso.path}`;
+      this.imageList = Array.from({ length: this.caso.cnt }, (_, i) => `${basePath}/${i + 1}.jpg`);
+    }
   }
 }

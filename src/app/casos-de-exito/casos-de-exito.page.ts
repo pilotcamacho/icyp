@@ -7,6 +7,7 @@ import {
   IonCard, IonCardHeader, IonCardTitle, IonCardContent
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
+import { CasosDeExitoService } from '../services/casos-de-exito.service';
 
 @Component({
   selector: 'app-casos-de-exito',
@@ -20,37 +21,14 @@ import { Router } from '@angular/router';
 })
 export class CasosDeExitoPage implements OnInit {
 
-  casosDeExito = [
-    {
-      id: 'artcartagena',
-      titulo: 'Artcartagena',
-      descripcion: 'Promoción cultural y artística en Cartagena con impacto internacional.'
-    },
-    {
-      id: 'economia-negocios',
-      titulo: 'Economía y Negocios',
-      descripcion: 'Transformación digital en sectores empresariales clave.'
-    },
-    {
-      id: 'infraestructura',
-      titulo: 'Infraestructura',
-      descripcion: 'Desarrollo de proyectos sostenibles con enfoque social.'
-    },
-    {
-      id: 'galeria-cano',
-      titulo: 'Galería Cano',
-      descripcion: 'Rescate y exposición de arte colonial colombiano.'
-    },
-    {
-      id: 'botero-china',
-      titulo: 'Botero en China',
-      descripcion: 'Exposición internacional del maestro Botero en Shanghái y Pekín.'
-    }
-  ];
+  casosDeExito: { id: string, titulo: string, descripcion: string, path: string, cnt: number }[];
 
-
-
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private casosDeExitoSrv: CasosDeExitoService
+  ) {
+    this.casosDeExito = this.casosDeExitoSrv.casosDeExito;
+  }
 
   ngOnInit() {
   }
